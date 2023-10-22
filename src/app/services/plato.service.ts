@@ -4,6 +4,7 @@ import { Plato } from '../models/plato';
 
 const base_url = "http://localhost:3000/plato"
 
+
 @Injectable({
   providedIn: 'root'
 })
