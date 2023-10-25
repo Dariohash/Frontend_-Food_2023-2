@@ -1,0 +1,48 @@
+{
+  "plato": [
+    {
+      "id": 1,
+      "nombre": "Ceviche de Pescado",
+      "descripcion": "Elaborado pescado fresco con limones del norte.",
+      "precio": 20.0
+    },
+    {
+      "id": 2,
+      "nombre": "Causa de Atun",
+      "descripcion": "Rica causa de atun con verduras frescas.",
+      "precio": 13.0
+    },
+    {
+      "id": 3,
+      "nombre": "Arroz con Pollo",
+      "descripcion": "Rico arroz con pollo parte pierna.",
+      "precio": 15.0
+    }
+  ],
+
+  "cliente":[
+    {
+      "id": 1,
+      "nombre": "Carlos",
+      "correo": "carl@gmail.com",
+      "contrasena": 170603,
+      "telefono": 957164
+    },
+
+    {
+      "id": 2,
+      "nombre": "Farid",
+      "correo": "fiyi@gmail.com",
+      "contrasena": 1706,
+      "telefono": 9325126
+    },
+
+    {
+      "id": 3,
+      "nombre": "Omar",
+      "correo": "omar@gmail.com",
+      "contrasena": 1703,
+      "telefono": 957164
+    }
+  ]
+}
