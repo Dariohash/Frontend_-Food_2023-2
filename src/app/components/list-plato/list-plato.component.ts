@@ -9,7 +9,7 @@ import { PlatoService } from 'src/app/services/plato.service';
   styleUrls: ['./list-plato.component.css']
 })
 export class ListPlatoComponent implements OnInit {
-  displayedColumns: string[] = ['id','nombre','descripcion','precio']
+  displayedColumns: string[] = ['id','nombre','descripcion','precio', 'acciones']
   dataSource = new MatTableDataSource<Plato>()
 
 constructor(private platoService: PlatoService){}
@@ -23,5 +23,13 @@ constructor(private platoService: PlatoService){}
       this.dataSource = new MatTableDataSource(data)
     })
   }
+
+edit(    id: number, nombre: string, descripcion: string, precio: number){
+
+}
+
+delete(id: any){
+
+}
 
 }

@@ -4,19 +4,25 @@
       "id": 1,
       "nombre": "Ceviche de Pescado",
       "descripcion": "Elaborado pescado fresco con limones del norte.",
-      "precio": 20.0
+      "precio": 20
     },
     {
       "id": 2,
       "nombre": "Causa de Atun",
       "descripcion": "Rica causa de atun con verduras frescas.",
-      "precio": 13.0
+      "precio": 13
     },
     {
       "id": 3,
       "nombre": "Arroz con Pollo",
       "descripcion": "Rico arroz con pollo parte pierna.",
-      "precio": 15.0
+      "precio": 15
+    },
+    {
+      "id": 4,
+      "nombre": "La beba Desi",
+      "descripcion": "Rico Plato con altas Proteinas",
+      "precio": 60
     }
   ]
 }
