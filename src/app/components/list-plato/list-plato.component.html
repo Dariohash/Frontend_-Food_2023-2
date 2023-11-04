@@ -1,3 +1,4 @@
+<mat-card>
 
   <h2>Lista de Platos</h2>
   <button mat-raised-button color = "primary" style="background-color: #246098;" [routerLink]="'/addPlato'">Agregar</button>
@@ -53,4 +54,8 @@
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
+
+
+
+</mat-card>
 

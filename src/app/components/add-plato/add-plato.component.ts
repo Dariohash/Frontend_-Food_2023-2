@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Plato } from 'src/app/models/plato';
 import { PlatoService } from 'src/app/services/plato.service';
+import { MatSnackBar } from '@angular/material/snack-bar'
 
 @Component({
   selector: 'app-add-plato',
@@ -15,6 +16,7 @@ export class AddPlatoComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private platoService:PlatoService,
+    private snackBar: MatSnackBar,
     private router: Router){}
 
   ngOnInit():void{
@@ -41,7 +43,10 @@ export class AddPlatoComponent implements OnInit {
     this.platoService.savePlato(plato).subscribe({
       next: (data) => {
         console.log("Se ha guardado el plato")
-        this.router.navigate(['listPlato'])
+        this.snackBar.open('Plato Creado Correctamente','',{
+          duration: 3000
+        })
+        this.router.navigate(['/listPlato'])
       },
       error: (err) => {
         console.log(err)
