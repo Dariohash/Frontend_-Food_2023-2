@@ -39,7 +39,7 @@ constructor(
     })
   }
 
-//Cración para la filtración del plato
+//Cración para la filtración del plato por nombre
   filterPlatoByNombre(nombre: any) {
     if (nombre.length === 0)
       {return this.getPlato()}
@@ -48,7 +48,6 @@ constructor(
       this.processPlatoResponse(resp, nombre)
     })
   }
-
   processPlatoResponse(resp: any, nombre: string) {
     const datPlato: Plato[] = []
 
@@ -57,11 +56,10 @@ constructor(
 
 //Busqueda por nombre
     listAuto.forEach((element: Plato) => {
-      if (element.nombre.startsWith(nombre)) //element.nombre.toLowerCase().startsWith(nombre.toLowerCase())) este codigo es para quela búsqueda en tu filtro sea insensible a mayúsculas y minúsculas
+      if (element.nombre.toLowerCase().startsWith(nombre.toLowerCase())) //este codigo es para quela búsqueda en tu filtro sea insensible a mayúsculas y minúsculas  // element.nombre.startsWith(nombre) este es el code del profe pero solo busca como esta escrito respetando mayusculas y minusculas
       {datPlato.push(element)}
-
     });
-  //set the datasource
+  //Refresca los datos buscados
   this.dataSource = new MatTableDataSource<Plato>(datPlato);
   this.dataSource.paginator = this.paginator;
   }
@@ -89,6 +87,7 @@ delete(id: any){
     },
   })
 }
+//Para que nos pregunte si en verdad queremos eliminarlo
 showDialog(id: number): void {
   this.dialog.open(DialogComponent, {
     data: "¿Deseas eliminar?"

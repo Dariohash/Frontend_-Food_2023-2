@@ -26,7 +26,7 @@ export class AddPlatoComponent implements OnInit {
   ngOnInit():void{
     this.reactiveForm()
   }
-
+//es para que el bonton insertar se balide cuando se llenen todos los espacios selecciona
   reactiveForm() {
     this.myForm = this.fb.group({
       id : [''],
