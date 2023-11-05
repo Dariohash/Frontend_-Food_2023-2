@@ -5,7 +5,8 @@ import { AddPlatoComponent } from './components/add-plato/add-plato.component';
 
 const routes: Routes = [
   {path: 'listPlato',component: ListPlatoComponent},
-  {path: 'addPlato', component: AddPlatoComponent}
+  {path: 'addPlato', component: AddPlatoComponent},
+  {path:'editPlato/:id', component: AddPlatoComponent}
 ];
 
 @NgModule({

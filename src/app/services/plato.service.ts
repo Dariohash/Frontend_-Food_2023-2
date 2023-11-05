@@ -19,7 +19,7 @@ export class PlatoService {
 
   getPlatoById(id: any){
     const endpoint = `${base_url}/${id}`;
-    return this.http.get<Plato[]>(endpoint)
+    return this.http.get<Plato>(endpoint)
   }
 
   savePlato(body: any){

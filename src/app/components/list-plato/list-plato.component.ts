@@ -1,9 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { Plato } from 'src/app/models/plato';
 import { PlatoService } from 'src/app/services/plato.service';
+import { DialogComponent } from '../dialog/dialog.component';
+import { MatPaginator } from '@angular/material/paginator';
+
 
 @Component({
   selector: 'app-list-plato',
@@ -15,10 +19,13 @@ export class ListPlatoComponent implements OnInit {
   displayedColumns: string[] = ['id','nombre','descripcion','precio', 'acciones']
   dataSource = new MatTableDataSource<Plato>()
 
+  @ViewChild(MatPaginator, {static: true}) paginator!:MatPaginator
+
 constructor(
   private platoService: PlatoService,
   private snackBar: MatSnackBar,
-  private router: Router
+  private router: Router,
+  public dialog: MatDialog
   ){}
 
   ngOnInit(): void {
@@ -28,7 +35,35 @@ constructor(
   getPlato(){
     this.platoService.getPlato().subscribe((data: Plato[]) =>{
       this.dataSource = new MatTableDataSource(data)
+      this.dataSource.paginator = this.paginator
     })
+  }
+
+//Cración para la filtración del plato
+  filterPlatoByNombre(nombre: any) {
+    if (nombre.length === 0)
+      {return this.getPlato()}
+
+      this.platoService.getPlato().subscribe((resp: any) => {
+      this.processPlatoResponse(resp, nombre)
+    })
+  }
+
+  processPlatoResponse(resp: any, nombre: string) {
+    const datPlato: Plato[] = []
+
+    let listAuto = resp
+    console.log("resp.."+ resp)
+
+//Busqueda por nombre
+    listAuto.forEach((element: Plato) => {
+      if (element.nombre.startsWith(nombre)) //element.nombre.toLowerCase().startsWith(nombre.toLowerCase())) este codigo es para quela búsqueda en tu filtro sea insensible a mayúsculas y minúsculas
+      {datPlato.push(element)}
+
+    });
+  //set the datasource
+  this.dataSource = new MatTableDataSource<Plato>(datPlato);
+  this.dataSource.paginator = this.paginator;
   }
 
 edit(id:number,
@@ -53,6 +88,16 @@ delete(id: any){
       console.log(err)
     },
   })
-
+}
+showDialog(id: number): void {
+  this.dialog.open(DialogComponent, {
+    data: "¿Deseas eliminar?"
+    })
+    .afterClosed()
+    .subscribe((confirmado: Boolean) => {
+      if (confirmado) {
+        this.delete(id)
+      }
+    })
 }
 }

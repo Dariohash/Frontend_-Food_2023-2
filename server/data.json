@@ -16,7 +16,7 @@
       "id": 3,
       "nombre": "Arroz con Pollo",
       "descripcion": "Rico arroz con pollo parte pierna.",
-      "precio": 15
+      "precio": 16
     },
     {
       "id": 4,
@@ -26,9 +26,21 @@
     },
     {
       "id": 5,
-      "nombre": "Hola",
-      "descripcion": "Hola",
-      "precio": 1
+      "nombre": "Hola ",
+      "descripcion": "Holas",
+      "precio": 6
+    },
+    {
+      "id": 6,
+      "nombre": "Cau Cau",
+      "descripcion": "Rico",
+      "precio": 56
+    },
+    {
+      "id": 7,
+      "nombre": "Arroz Chaufa ",
+      "descripcion": "Rico",
+      "precio": 23
     }
   ]
 }

@@ -1,0 +1,17 @@
+.modal-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+  max-width: 400px; /* Establece un ancho máximo */
+  max-height: 30vh; /* Establece una altura máxima (el 80% del alto de la ventana) */
+  margin: 0 auto; /* Centra el cuadro de diálogo horizontalmente */
+}
+button {
+  margin: 30px 30px;
+  padding: 10px 20px;
+  font-size: 16px;
+
+}

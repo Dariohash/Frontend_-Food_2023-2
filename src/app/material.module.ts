@@ -8,7 +8,10 @@ import { MatFormFieldModule} from '@angular/material/form-field'
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon'
 import { MatSnackBarModule } from '@angular/material/snack-bar'
-
+import { MatDialogModule } from '@angular/material/dialog';
+import { DialogModule } from '@angular/cdk/dialog';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 
 @NgModule({
@@ -24,7 +27,12 @@ import { MatSnackBarModule } from '@angular/material/snack-bar'
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatDialogModule,
+    DialogModule,
+    BrowserAnimationsModule,
+    MatPaginatorModule
+
   ]
 })
 export class MaterialModule { }
