@@ -4,7 +4,7 @@
       "id": 1,
       "nombre": "Ceviche de Pescado",
       "descripcion": "Elaborado pescado fresco con limones del norte.",
-      "precio": 20
+      "precio": 22
     },
     {
       "id": 2,
@@ -41,6 +41,18 @@
       "nombre": "Arroz Chaufa ",
       "descripcion": "Rico",
       "precio": 23
+    },
+    {
+      "id": 8,
+      "nombre": "Hola",
+      "descripcion": "Holass",
+      "precio": 56
+    },
+    {
+      "id": 9,
+      "nombre": "Mariscal",
+      "descripcion": "Gutierrez ",
+      "precio": 26
     }
   ]
 }
