@@ -2,6 +2,7 @@
     <span class="title" (click)="toggleAnimation()"
       [@titleAnimation]="isAnimated ? 'active' : 'inactive'">BitFood</span>
     <span class="spacer"></span>
+    
     <!-- Menú 1 -->
     <button mat-button [matMenuTriggerFor]="menu1">Cliente</button>
     <mat-menu #menu1="matMenu">
@@ -12,8 +13,8 @@
     <!-- Menú 2 -->
     <button mat-button [matMenuTriggerFor]="menu2">Restaurante</button>
     <mat-menu #menu2="matMenu">
-      <button mat-button routerLink="/">Insertar Restaurante</button>
-      <button mat-button routerLink="/">Listar Restaurante</button>
+      <button mat-button routerLink="/addRestaurante">Insertar Restaurante</button>
+      <button mat-button routerLink="/listRestaurante">Listar Restaurante</button>
     </mat-menu>
   
     <!-- Menú 3 -->
@@ -26,8 +27,8 @@
     <!-- Menú 4 -->
     <button mat-button [matMenuTriggerFor]="menu4">Orden</button>
     <mat-menu #menu4="matMenu">
-      <button mat-button routerLink="/">Insertar Orden</button>
-      <button mat-button routerLink="/">Listar Orden</button>
+      <button mat-button routerLink="/addOrden">Insertar Orden</button>
+      <button mat-button routerLink="/listOrden">Listar Orden</button>
     </mat-menu>
 
     <!-- Menú 5 -->

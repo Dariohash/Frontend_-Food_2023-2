@@ -4,23 +4,34 @@
       "id": 1,
       "nombre": "Ceviche de Pescado",
       "descripcion": "Elaborado pescado fresco con limones del norte.",
-      "precio": 20.0
+      "precio": 20
     },
     {
       "id": 2,
       "nombre": "Causa de Atun",
       "descripcion": "Rica causa de atun con verduras frescas.",
-      "precio": 13.0
+      "precio": 13
     },
     {
       "id": 3,
       "nombre": "Arroz con Pollo",
       "descripcion": "Rico arroz con pollo parte pierna.",
-      "precio": 15.0
+      "precio": 15
+    },
+    {
+      "id": 4,
+      "nombre": "Chicharron",
+      "descripcion": "Fresco",
+      "precio": 20
+    },
+    {
+      "id": 5,
+      "nombre": "fga",
+      "descripcion": "1",
+      "precio": 1
     }
   ],
-
-  "cliente":[
+  "cliente": [
     {
       "id": 1,
       "nombre": "Carlos",
@@ -28,7 +39,6 @@
       "contrasena": 170603,
       "telefono": 957164
     },
-
     {
       "id": 2,
       "nombre": "Farid",
@@ -36,13 +46,56 @@
       "contrasena": 1706,
       "telefono": 9325126
     },
-
     {
       "id": 3,
       "nombre": "Omar",
       "correo": "omar@gmail.com",
       "contrasena": 1703,
       "telefono": 957164
+    }
+  ],
+  "restaurante": [
+    {
+      "id": 1,
+      "nombre": "PUERTO AZUL",
+      "descripcion": "carl@gmail.com",
+      "cantidad": 2,
+      "estrellas": 3,
+      "fecha": 15
+    },
+    {
+      "id": 2,
+      "nombre": "ca",
+      "descripcion": "1",
+      "cantidad": 12,
+      "estrellas": 2,
+      "fecha": 12
+    },
+    {
+      "id": 3,
+      "nombre": "1",
+      "descripcion": "1",
+      "cantidad": 1,
+      "estrellas": 1,
+      "fecha": 1
+    }
+  ],
+  "orden": [
+    {
+      "id": 1,
+      "fecha": 15
+    },
+    {
+      "id": 2,
+      "fecha": "1"
+    },
+    {
+      "id": 3,
+      "fecha": "2"
+    },
+    {
+      "id": 4,
+      "fecha": "1"
     }
   ]
 }

@@ -1,5 +1,5 @@
 <mat-card>
-  <h2>Agregar Cliente</h2>
+  <h2>Agregar Restaurante</h2>
 
 <form [formGroup]="myForm" autocomplete="off">
   <div class="auto-container">
@@ -23,15 +23,15 @@
     <mat-form-field>
       <input
         matInput
-        placeholder="Correo"
-        formControlName="correo"
+        placeholder="Descripcion"
+        formControlName="descripcion"
         required
       />
     </mat-form-field>
     <div
     *ngIf="
-      myForm.get('correo')?.hasError('required') &&
-      myForm.get('correo')?.touched
+      myForm.get('descripcion')?.hasError('required') &&
+      myForm.get('descripcion')?.touched
     "
     style="margin-top: -20px"
   >
@@ -41,15 +41,16 @@
   <mat-form-field>
     <input
       matInput
-      placeholder="Contraseña"
-      formControlName="contrasena"
+      type="number"
+      placeholder="Cantidad"
+      formControlName="cantidad"
       required
     />
   </mat-form-field>
   <div
   *ngIf="
-    myForm.get('contrasena')?.hasError('required') &&
-    myForm.get('contrasena')?.touched
+    myForm.get('cantidad')?.hasError('required') &&
+    myForm.get('cantidad')?.touched
   "
   style="margin-top: -20px"
 >
@@ -59,20 +60,41 @@
 <mat-form-field>
   <input
     matInput
-    placeholder="Telefono"
-    formControlName="telefono"
+    type="number"
+    placeholder="Estrellas"
+    formControlName="estrellas"
     required
   />
 </mat-form-field>
 <div
 *ngIf="
-  myForm.get('telefono')?.hasError('required') &&
-  myForm.get('telefono')?.touched
+  myForm.get('estrellas')?.hasError('required') &&
+  myForm.get('estrellas')?.touched
 "
 style="margin-top: -20px"
 >
 <span class="mda-form-msg"> Este campo es obligatorio </span>
 </div>
+
+<mat-form-field>
+  <input
+    matInput
+    type="number"
+    placeholder="Fecha"
+    formControlName="fecha"
+    required
+  />
+</mat-form-field>
+<div
+*ngIf="
+  myForm.get('fecha')?.hasError('required') &&
+  myForm.get('fecha')?.touched
+"
+style="margin-top: -20px"
+>
+<span class="mda-form-msg"> Este campo es obligatorio </span>
+</div>
+
 
 
 </div>
@@ -84,7 +106,7 @@ style="margin-top: -20px"
   [disabled]="myForm.invalid"
   type="button"
   style="margin-left: 10 px"
-  (click)="addCliente()"
+  (click)="addRestaurante()"
 >
 
   Agregar
@@ -94,7 +116,7 @@ style="margin-top: -20px"
 mat-raised-button
 color="warn"
 type="button"
-routerLink="/listCliente"
+routerLink="/listRestaurante"
 >
 Cancelar
 </button>

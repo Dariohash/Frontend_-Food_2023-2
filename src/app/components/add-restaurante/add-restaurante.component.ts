@@ -2,20 +2,20 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
-import { Plato } from 'src/app/models/plato';
-import { PlatoService } from 'src/app/services/plato.service';
+import { Restaurante } from 'src/app/models/restaurante';
+import { RestauranteService } from 'src/app/services/restaurante.service';
 
 @Component({
-  selector: 'app-add-plato',
-  templateUrl: './add-plato.component.html',
-  styleUrls: ['./add-plato.component.css']
+  selector: 'app-add-restaurante',
+  templateUrl: './add-restaurante.component.html',
+  styleUrls: ['./add-restaurante.component.css']
 })
-export class AddPlatoComponent implements OnInit {
+export class AddRestauranteComponent implements OnInit  {
   public myForm!: FormGroup;
 
   constructor(
     private fb: FormBuilder,
-    private platoService: PlatoService,
+    private restauranteService: RestauranteService,
     private snackBar: MatSnackBar,
     private router: Router
   ) {}
@@ -29,24 +29,28 @@ export class AddPlatoComponent implements OnInit {
       id: [''],
       nombre: ['', Validators.required],
       descripcion: ['', Validators.required],
-      precio: ['', Validators.required]
+      cantidad: ['', Validators.required],
+      estrellas: ['', Validators.required],
+      fecha: ['', Validators.required]
     });
   }
 
-  addPlato() {
-    const plato: Plato = {
+  addRestaurante() {
+    const restaurante: Restaurante = {
       id: 0,
       nombre: this.myForm.get('nombre')!.value,
       descripcion: this.myForm.get('descripcion')!.value,
-      precio: this.myForm.get('precio')!.value
+      cantidad: this.myForm.get('cantidad')!.value,
+      estrellas: this.myForm.get('estrellas')!.value,
+      fecha: this.myForm.get('fecha')!.value,
     }
-    this.platoService.savePlato(plato).subscribe({
+    this.restauranteService.saveRestaurante(restaurante).subscribe({
       next: (data) => {
         console.log("ingresando registro...")
-        this.snackBar.open('Plato creado correctamente', '', {
+        this.snackBar.open('Restaurante creado correctamente', '', {
           duration: 3000
         })
-        this.router.navigate(['/listPlato'])
+        this.router.navigate(['/listRestaurante'])
       },
       error: (err) => {
         console.log(err)

@@ -1,0 +1,59 @@
+<mat-card>
+  <h2>Agregar Orden</h2>
+
+<form [formGroup]="myForm" autocomplete="off">
+  <div class="auto-container">
+    <mat-form-field>
+      <input
+      matInput
+      placeholder="Fecha"
+      formControlName="fecha"
+      required />
+    </mat-form-field>
+    <div
+    *ngIf="
+      myForm.get('fecha')?.hasError('required') &&
+      myForm.get('fecha')?.touched
+    "
+    style="margin-top: -20px"
+  >
+    <span class="mda-form-msg"> Este campo es obligatorio </span>
+  </div>
+
+
+
+
+
+
+
+
+
+</div>
+
+<div>
+  <button class="button"
+  mat-raised-button
+  color="primary"
+  [disabled]="myForm.invalid"
+  type="button"
+  style="margin-left: 10 px"
+  (click)="addOrden()"
+>
+
+  Agregar
+</button>
+
+<button class="button"
+mat-raised-button
+color="warn"
+type="button"
+routerLink="/listOrden"
+>
+Cancelar
+</button>
+
+  </div>
+
+</form>
+</mat-card>
+

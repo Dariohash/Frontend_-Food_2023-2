@@ -15,8 +15,17 @@ export class ClienteService {
     const endpoint = `${base_url}/`;
     return this.http.get<Cliente[]>(endpoint)
   }
-  savePlato(body: any){
+  saveCliente(body: any){
     const endpoint = `${base_url}`;
     return this.http.post<Cliente>(endpoint, body)
+  }
+  updateCliente(body: any, id: any) {
+    const endpoint = `${base_url}/${id}`;
+    return this.http.put<Cliente>(endpoint, body)
+  }
+  deleteCliente(id: any) {
+    const endpoint = `${base_url}/${id}`;
+    return this.http.delete<Cliente>(endpoint)
+
   }
 }

@@ -19,4 +19,13 @@ export class PlatoService {
     const endpoint = `${base_url}`;
     return this.http.post<Plato>(endpoint, body)
   }
+  updatePlato(body: any, id: any) {
+    const endpoint = `${base_url}/${id}`;
+    return this.http.put<Plato>(endpoint, body)
+  }
+  deletePlato(id: any) {
+    const endpoint = `${base_url}/${id}`;
+    return this.http.delete<Plato>(endpoint)
+
+  }
 }
