@@ -15,6 +15,10 @@ export class RestauranteService {
     const endpoint = `${base_url}/`;
     return this.http.get<Restaurante[]>(endpoint)
   }
+  getRestauranteById(id: any) {
+    const endpoint = `${base_url}/${id}`;
+    return this.http.get<Restaurante>(endpoint)
+  }
   saveRestaurante(body: any){
     const endpoint = `${base_url}`;
     return this.http.post<Restaurante>(endpoint, body)

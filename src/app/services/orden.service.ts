@@ -15,6 +15,10 @@ export class OrdenService {
     const endpoint = `${base_url}/`;
     return this.http.get<Orden[]>(endpoint)
   }
+  getOrdenById(id: any) {
+    const endpoint = `${base_url}/${id}`;
+    return this.http.get<Orden>(endpoint)
+  }
   saveOrden(body: any){
     const endpoint = `${base_url}`;
     return this.http.post<Orden>(endpoint, body)

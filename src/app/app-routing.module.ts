@@ -12,12 +12,16 @@ import { ListOrdenComponent } from './components/list-orden/list-orden.component
 const routes: Routes = [
   {path: 'listPlato',component: ListPlatoComponent},
   {path: 'addPlato', component: AddPlatoComponent},
+  {path: 'editPlato/:id', component: AddPlatoComponent},
   {path: 'listCliente', component: ListClienteComponent},
   {path: 'addCliente', component: AddClienteComponent},
+  {path: 'editCliente/:id', component: AddClienteComponent},
   {path: 'listRestaurante',component: ListRestauranteComponent},
   {path: 'addRestaurante',component: AddRestauranteComponent},
+  {path: 'editRestaurante/:id', component: AddRestauranteComponent},
   {path: 'listOrden',component: ListOrdenComponent},
-  {path: 'addOrden',component: AddOrdenComponent}
+  {path: 'addOrden',component: AddOrdenComponent},
+  {path: 'editOrden/:id', component: AddOrdenComponent}
 
 
 

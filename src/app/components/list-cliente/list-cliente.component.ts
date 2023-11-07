@@ -12,7 +12,7 @@ import { ClienteService } from 'src/app/services/cliente.service';
 })
 export class ListClienteComponent implements OnInit {
   [x: string]: any;
-  displayedColumns: string[] = ['id','nombre','correo','contrasena','telefono','actions']
+  displayedColumns: string[] = ['id','nombre','correo','contrasena','telefono','acciones']
   dataSource = new MatTableDataSource<Cliente>()
 
 constructor(private clienteService: ClienteService, private snackBar: MatSnackBar,
@@ -30,8 +30,10 @@ constructor(private clienteService: ClienteService, private snackBar: MatSnackBa
 
   edit(
     id: number,
-    brand: string,
-    price: number
+    nombre: string,
+    correo: string,
+    contrasena: string,
+    telefono: string
   ) {
     console.log('Editando ...')
 

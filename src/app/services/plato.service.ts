@@ -15,6 +15,10 @@ export class PlatoService {
     const endpoint = `${base_url}/`;
     return this.http.get<Plato[]>(endpoint)
   }
+  getPlatoById(id: any) {
+    const endpoint = `${base_url}/${id}`;
+    return this.http.get<Plato>(endpoint)
+  }
   savePlato(body: any){
     const endpoint = `${base_url}`;
     return this.http.post<Plato>(endpoint, body)

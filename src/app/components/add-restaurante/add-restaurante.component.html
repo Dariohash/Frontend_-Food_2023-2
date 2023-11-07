@@ -77,13 +77,11 @@ style="margin-top: -20px"
 </div>
 
 <mat-form-field>
-  <input
-    matInput
-    type="number"
-    placeholder="Fecha"
-    formControlName="fecha"
-    required
-  />
+  <mat-label>Choose a date</mat-label>
+  <input matInput [matDatepicker]="picker" formControlName="fecha">
+  <mat-hint>MM/DD/YYYY</mat-hint>
+  <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
 </mat-form-field>
 <div
 *ngIf="

@@ -23,12 +23,6 @@
       "nombre": "Chicharron",
       "descripcion": "Fresco",
       "precio": 20
-    },
-    {
-      "id": 5,
-      "nombre": "fga",
-      "descripcion": "1",
-      "precio": 1
     }
   ],
   "cliente": [
@@ -48,10 +42,17 @@
     },
     {
       "id": 3,
-      "nombre": "Omar",
-      "correo": "omar@gmail.com",
-      "contrasena": 1703,
-      "telefono": 957164
+      "nombre": "carlos",
+      "correo": "dogerloen72@gmail.com",
+      "contrasena": "1706+3",
+      "telefono": "9487"
+    },
+    {
+      "id": 4,
+      "nombre": "carlos",
+      "correo": "dogelon12",
+      "contrasena": "1212",
+      "telefono": "1212"
     }
   ],
   "restaurante": [
@@ -65,19 +66,19 @@
     },
     {
       "id": 2,
-      "nombre": "ca",
-      "descripcion": "1",
-      "cantidad": 12,
-      "estrellas": 2,
-      "fecha": 12
+      "nombre": "puerto azul",
+      "descripcion": "av libre 123",
+      "cantidad": 5,
+      "estrellas": 5,
+      "fecha": 120306
     },
     {
       "id": 3,
-      "nombre": "1",
-      "descripcion": "1",
+      "nombre": "carlos",
+      "descripcion": "av 123",
       "cantidad": 1,
-      "estrellas": 1,
-      "fecha": 1
+      "estrellas": 3,
+      "fecha": "2023-11-08T05:00:00.000Z"
     }
   ],
   "orden": [
@@ -87,7 +88,7 @@
     },
     {
       "id": 2,
-      "fecha": "1"
+      "fecha": "555555555555"
     },
     {
       "id": 3,

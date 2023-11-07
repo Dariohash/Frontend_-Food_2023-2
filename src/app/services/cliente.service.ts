@@ -15,6 +15,10 @@ export class ClienteService {
     const endpoint = `${base_url}/`;
     return this.http.get<Cliente[]>(endpoint)
   }
+  getClientesById(id: any) {
+    const endpoint = `${base_url}/${id}`;
+    return this.http.get<Cliente>(endpoint)
+  }
   saveCliente(body: any){
     const endpoint = `${base_url}`;
     return this.http.post<Cliente>(endpoint, body)
