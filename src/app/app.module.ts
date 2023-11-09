@@ -1,9 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component'; //para usar el toolbar
+import { IndexaComponent } from './components/indexa/indexa.component';
+import { IndexMostrarComponent } from './components/indexa/index-mostrar/index-mostrar.component';
 import { ListPlatoComponent } from './components/list-plato/list-plato.component';
 import { AddPlatoComponent } from './components/add-plato/add-plato.component';
 import { ListClienteComponent } from './components/list-cliente/list-cliente.component';
@@ -17,6 +20,7 @@ import { ListOrdenComponent } from './components/list-orden/list-orden.component
 import { AddOrdenComponent } from './components/add-orden/add-orden.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +32,10 @@ import { AddOrdenComponent } from './components/add-orden/add-orden.component';
     ListRestauranteComponent,
     AddRestauranteComponent,
     ListOrdenComponent,
-    AddOrdenComponent
+    AddOrdenComponent,
+    IndexaComponent,
+    IndexMostrarComponent
+
   ],
   imports: [
     BrowserModule,

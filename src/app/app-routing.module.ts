@@ -8,6 +8,7 @@ import { ListRestauranteComponent } from './components/list-restaurante/list-res
 import { AddRestauranteComponent } from './components/add-restaurante/add-restaurante.component';
 import { AddOrdenComponent } from './components/add-orden/add-orden.component';
 import { ListOrdenComponent } from './components/list-orden/list-orden.component';
+import { IndexMostrarComponent } from './components/indexa/index-mostrar/index-mostrar.component';
 
 const routes: Routes = [
   {path: 'listPlato',component: ListPlatoComponent},
@@ -21,7 +22,16 @@ const routes: Routes = [
   {path: 'editRestaurante/:id', component: AddRestauranteComponent},
   {path: 'listOrden',component: ListOrdenComponent},
   {path: 'addOrden',component: AddOrdenComponent},
-  {path: 'editOrden/:id', component: AddOrdenComponent}
+  {path: 'editOrden/:id', component: AddOrdenComponent},
+
+ 
+  {
+    path: 'inicio', component: IndexMostrarComponent
+  },
+  {
+    path: 'pages',
+    loadChildren: () => import('./app.module').then((m) => m.AppModule),
+  },
 
 
 
