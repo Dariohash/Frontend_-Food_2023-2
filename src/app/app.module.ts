@@ -10,6 +10,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+//import { FormsModule } from '@angular/forms';
+import {MatSidenavModule} from '@angular/material/sidenav'; //estamso provando
+import { MatDividerModule } from '@angular/material/divider';  //estamso provando
+
 
 @NgModule({
   declarations: [
@@ -24,7 +28,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     MaterialModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+   // FormsModule,
+    MatSidenavModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
