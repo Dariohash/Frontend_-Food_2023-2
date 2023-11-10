@@ -8,7 +8,7 @@ import { Router, NavigationEnd } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
   isLoginPage: boolean = false;
-
+  isIndexPage: boolean = false;
   constructor(private router: Router) {}
 
   ngOnInit() {
@@ -16,6 +16,8 @@ export class NavbarComponent implements OnInit {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.isLoginPage = event.url === '/login'; // Ajusta esto según la ruta de tu página de inicio de sesión
+        this.isIndexPage = event.url === '/index';
+
       }
     });
   }

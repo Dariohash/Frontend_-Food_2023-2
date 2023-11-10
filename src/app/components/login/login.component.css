@@ -1,8 +1,8 @@
 .bg-amarillo {
-  background-color: #aaaa29;
+  background-color: #004ca1;
 }
 .bg-amarillo:hover {
-  background-color: #ffb500; /* Puedes mantener el mismo color o cambiarlo si deseas */
+  background-color: #001f3f; /* Puedes mantener el mismo color o cambiarlo si deseas */
 }
 .logo-login {
   display: none !important;

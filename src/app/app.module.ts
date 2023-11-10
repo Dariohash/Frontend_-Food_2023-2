@@ -13,14 +13,17 @@ import { ReactiveFormsModule } from '@angular/forms';
 //import { FormsModule } from '@angular/forms';
 import {MatSidenavModule} from '@angular/material/sidenav'; //estamso provando
 import { MatDividerModule } from '@angular/material/divider';  //estamso provando
-
+import { IndexaComponent } from './components/indexa/indexa.component';
+import { IndexMostrarComponent } from './components/indexa/index-mostrar/index-mostrar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     ListPlatoComponent,
-    AddPlatoComponent
+    AddPlatoComponent,
+    IndexaComponent,
+    IndexMostrarComponent
   ],
   imports: [
     BrowserModule,
