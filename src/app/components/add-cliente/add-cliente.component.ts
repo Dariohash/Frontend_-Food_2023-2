@@ -46,6 +46,7 @@ export class AddClienteComponent implements OnInit  {
       } )
     }
   }
+  
 
 
   addCliente() {

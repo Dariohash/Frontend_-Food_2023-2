@@ -58,7 +58,7 @@ import { MatSliderModule } from '@angular/material/slider';
     MatCardModule,
     MatFormFieldModule,
     MatSliderModule,
-    MatIconModule
+    MatIconModule,
   ]
 })
 export class MaterialModule { }

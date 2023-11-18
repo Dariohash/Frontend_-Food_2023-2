@@ -1,46 +1,124 @@
-<mat-card>
-  <h2>Lista de Platos</h2>
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Platos</title>
+</head>
+<header >
+  <nav class="navbar-expand-lg navbar navbar-dark " style="background-color: #121212;">
+    <div class="container-fluid">
+      <img src="assets/logo.jpg" alt="Logo" width="50" height="50">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+            <li class="nav-item px-3">
+              <a class="nav-link active" aria-current="page"  routerLink="/listCliente" >Clientes</a>
+            </li>
+            <li class="nav-item px-3">
+                <a class="nav-link active" aria-current="page"  routerLink="/listPlato" >Platos</a>
+            </li>
+            <li class="nav-item px-3">
+                <a class="nav-link active" aria-current="page"  routerLink="/listRestaurante" >Restaurantes</a>
+            </li>
+            <li class="nav-item px-3">
+                <a class="nav-link active" aria-current="page"  routerLink="/listOrden" >Ordenes</a>
+            </li>
+          <li>
+            <button mat-raised-button color="warn" routerLink="/login">Cerrar Sesion</button>
+          </li>
+
+        </ul>
+        </div>
+    </div>
+</nav>
+</header>
 
 
-  <ng-container matColumnDef="id">
-    <th mat-header-cell *matHeaderCellDef> id </th>
-    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
-  </ng-container>
+
+<body  style="background-color:rgb(255, 255, 255)">
 
 
-  <ng-container matColumnDef="nombre">
-    <th mat-header-cell *matHeaderCellDef> Nombre </th>
-    <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
-  </ng-container>
+  <div class="container-lg" style="margin-top: 50px;">
+    <div style="text-align: center;">
+      <h1>Platos Disponibles Para Ordenar</h1>
+    </div>
+  <mat-grid-list cols="1" rowHeight="4em">
+    <mat-grid-tile>
+      <div style="text-align: right;">
+
+        <button mat-raised-button color="warn" routerLink="/addPlato" >Nuevo</button>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+
+  <mat-card-header>
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>Buscar Plato por Precio</mat-label>
+        <input matInput #input (keyup)="onPrecioInputChange(input.value)" />
+      </mat-form-field>
+    </div>
+  </mat-card-header>
+
+    <div class="mat-elevation-z8">
+      <table mat-table [dataSource]="dataSource" style="background-color: #F0F0F0;">
+
+        <!-- Id Column -->
+        <ng-container matColumnDef="nombre">
+          <th mat-header-cell *matHeaderCellDef> Nombre</th>
+          <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+        </ng-container>
+
+        <!-- Id Column -->
+        <ng-container matColumnDef="descripcion">
+          <th mat-header-cell *matHeaderCellDef> Descripcion </th>
+          <td mat-cell *matCellDef="let element"> {{element.descripcion}} </td>
+        </ng-container>
+
+        <!-- Id Column -->
+        <ng-container matColumnDef="precio">
+          <th mat-header-cell *matHeaderCellDef> Precio </th>
+          <td mat-cell *matCellDef="let element"> {{element.precio}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="imagen">
+          <th mat-header-cell *matHeaderCellDef> Foto Referencial </th>
+          <td mat-cell *matCellDef="let element">
+            <img [src]="getImagenUrl(element)" alt="Imagen" width="155" height="100" />
+          </td>
+        </ng-container>
+        
+
+        <!-- Id Column -->
+        <ng-container matColumnDef="acciones">
+          <th mat-header-cell *matHeaderCellDef>Acciones</th>
+          <td mat-cell *matCellDef="let element; let i = index">
+      
+            <button mat-icon-button color="primary" routerLink="/editPlato/{{element.id}}">
+              <mat-icon aria-label="Edit">edit</mat-icon>
+            </button>
+      
+            <button mat-icon-button color="primary" (click)="showDialog(element.id)">
+              <mat-icon aria-label="Delete">delete</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+
+        
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+
+      <mat-paginator [pageSizeOptions]="[5, 10, 20]"  style="background-color: #F0F0F0;"
+                 showFirstLastButtons
+                 aria-label="Select page of periodic elements">
+      </mat-paginator>
+    </div>
+  </div>
 
 
-  <ng-container matColumnDef="descripcion">
-    <th mat-header-cell *matHeaderCellDef> Descripcion </th>
-    <td mat-cell *matCellDef="let element"> {{element.descripcion}} </td>
-  </ng-container>
-
-  <ng-container matColumnDef="precio">
-    <th mat-header-cell *matHeaderCellDef> Precio </th>
-    <td mat-cell *matCellDef="let element"> {{element.precio}} </td>
-  </ng-container>
-
-
-  <ng-container matColumnDef="acciones">
-    <th mat-header-cell *matHeaderCellDef>Acciones</th>
-    <td mat-cell *matCellDef="let element; let i = index">
-
-      <button mat-icon-button color="primary" routerLink="/editPlato/{{element.id}}">
-        <mat-icon aria-label="Edit">edit</mat-icon>
-      </button>
-
-      <button mat-icon-button color="primary" (click)="delete(element.id)">
-        <mat-icon aria-label="Delete">delete</mat-icon>
-      </button>
-    </td>
-  </ng-container>
-  
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-</table>
-
+</body>
+</html>

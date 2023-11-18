@@ -8,7 +8,11 @@ import { ListRestauranteComponent } from './components/list-restaurante/list-res
 import { AddRestauranteComponent } from './components/add-restaurante/add-restaurante.component';
 import { AddOrdenComponent } from './components/add-orden/add-orden.component';
 import { ListOrdenComponent } from './components/list-orden/list-orden.component';
-import { IndexMostrarComponent } from './components/indexa/index-mostrar/index-mostrar.component';
+import { NavbarIndexComponent } from './components/navbar/navbar-index/navbar-index.component';
+import { LoginComponent } from './components/login/login.component';
+import { IndexComponent } from './components/indexa/index/index.component';
+
+
 
 const routes: Routes = [
   {path: 'listPlato',component: ListPlatoComponent},
@@ -26,11 +30,13 @@ const routes: Routes = [
 
  
   {
-    path: 'inicio', component: IndexMostrarComponent
+    path: 'index', component: IndexComponent
   },
   {
-    path: 'pages',
-    loadChildren: () => import('./app.module').then((m) => m.AppModule),
+    path: 'login', component: LoginComponent
+  },
+  {
+    path: 'navbar', component: NavbarIndexComponent
   },
 
 
