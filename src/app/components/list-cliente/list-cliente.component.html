@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nuestros Clientes</title>
+</head>
+<header >
+  <nav class="navbar-expand-lg navbar navbar-dark " style="background-color: #121212;">
+    <div class="container-fluid">
+      <img src="assets/logo.jpg" alt="Logo" width="50" height="50">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+            <li class="nav-item px-3">
+              <a class="nav-link active" aria-current="page"  routerLink="/listCliente" >Clientes</a>
+            </li>
+            <li class="nav-item px-3">
+                <a class="nav-link active" aria-current="page"  routerLink="/listPlato" >Platos</a>
+            </li>
+            <li class="nav-item px-3">
+                <a class="nav-link active" aria-current="page"  routerLink="/listRestaurante" >Restaurantes</a>
+            </li>
+            <li class="nav-item px-3">
+                <a class="nav-link active" aria-current="page"  routerLink="/listOrden" >Ordenes</a>
+            </li>
+          <li>
+            <button mat-raised-button color="warn" routerLink="/login">Cerrar Sesion</button>
+          </li>
+
+        </ul>
+        </div>
+    </div>
+</nav>
+</header>
+
+
+
+<body  style="background-color:rgb(255, 255, 255)">
+
+
+  <div class="container-lg" style="margin-top: 50px;">
+    <div style="text-align: center;">
+      <h1>Nuestros Clientes</h1>
+    </div>
+  <mat-grid-list cols="1" rowHeight="4em">
+    <mat-grid-tile>
+      <div style="text-align: right;">
+
+        <button mat-raised-button color="warn" routerLink="/addCliente" >Nuevo</button>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+
+  <mat-card-header>
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>Buscar Cliente por Nombre</mat-label>
+        <input matInput #input (keyup)="filterClienteByNombre(input.value)" />
+      </mat-form-field>
+    </div>
+  </mat-card-header>
+
+    <div class="mat-elevation-z8">
+      <table mat-table [dataSource]="dataSource" style="background-color: #F0F0F0;">
+
+        <!-- Id Column -->
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef> ID </th>
+          <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+
+        <!-- Id Column -->
+        <ng-container matColumnDef="nombre">
+          <th mat-header-cell *matHeaderCellDef> Nombre</th>
+          <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+        </ng-container>
+
+        <!-- Id Column -->
+        <ng-container matColumnDef="correo">
+          <th mat-header-cell *matHeaderCellDef> Correo </th>
+          <td mat-cell *matCellDef="let element"> {{element.correo}} </td>
+        </ng-container>
+
+        <!-- Id Column -->
+        <ng-container matColumnDef="contrasena">
+          <th mat-header-cell *matHeaderCellDef> Contraseña </th>
+          <td mat-cell *matCellDef="let element"> {{element.contrasena}} </td>
+        </ng-container>
+
+        <!-- Id Column -->
+        <ng-container matColumnDef="telefono">
+          <th mat-header-cell *matHeaderCellDef> Telefono </th>
+          <td mat-cell *matCellDef="let element"> {{element.telefono}} </td>
+        </ng-container>
+
+        
+
+        <!-- Id Column -->
+        <ng-container matColumnDef="acciones">
+          <th mat-header-cell *matHeaderCellDef>Acciones</th>
+          <td mat-cell *matCellDef="let element; let i = index">
+      
+            <button mat-icon-button color="primary" routerLink="/editCliente/{{element.id}}">
+              <mat-icon aria-label="Edit">edit</mat-icon>
+            </button>
+      
+            <button mat-icon-button color="primary" (click)="showDialog(element.id)">
+              <mat-icon aria-label="Delete">delete</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+
+      <mat-paginator [pageSizeOptions]="[5, 10, 20]"  style="background-color: #F0F0F0;"
+                 showFirstLastButtons
+                 aria-label="Select page of periodic elements">
+      </mat-paginator>
+    </div>
+  </div>
+ 
+  <div class="text-center" style="margin-top: 20px;">
+    <button mat-raised-button color="warn" (click)="exportToExcel()">Exportar en Excel
+      <mat-icon>trending_down</mat-icon>
+    </button>
+  </div>
+  
+  
+
+</body>
+</html>

@@ -1,1 +1,111 @@
-<p>add-plato works!</p>
+<!DOCTYPE html>
+<html lang="en" style="background-color:rgb(233, 222, 222)">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<header >
+  <nav class="navbar-expand-lg navbar navbar-dark " style="background-color: #121212;">
+    <div class="container-fluid">
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+            <li class="nav-item px-3">
+              <li class="nav-item px-3">
+                <a class="nav-link active" aria-current="page"  routerLink="/listCliente" >Clientes</a>
+              </li>
+              <li class="nav-item px-3">
+                  <a class="nav-link active" aria-current="page"  routerLink="/listPlato" >Platos</a>
+              </li>
+              <li class="nav-item px-3">
+                  <a class="nav-link active" aria-current="page"  routerLink="/listRestaurante" >Restaurantes</a>
+              </li>
+              <li class="nav-item px-3">
+                  <a class="nav-link active" aria-current="page"  routerLink="/listOrden" >Ordenes</a>
+              </li>
+          <li>
+            <button mat-raised-button color="warn" routerLink="/login">Cerrar Sesion</button>
+          </li>
+
+        </ul>
+        </div>
+    </div>
+</nav>
+</header>
+
+
+<body style="background-color:rgb(233, 222, 222)">
+
+
+
+<div style="background-color:rgb(233, 222, 222)">
+
+
+  <div class="container-lg" style="margin-top: 50px;">
+    <div style="text-align: center;">
+      <h1>Registar Plato</h1>
+    </div>
+  </div>
+ <ng-container>
+  
+  <div class="container" style="text-align: center;">
+    <form [formGroup]="myForm" (submit)="addPlato()">
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Nombre</mat-label>
+        <input matInput required placeholder="nombre" formControlName="nombre">
+      </mat-form-field>
+      <div
+      *ngIf="
+        myForm.get('nombre')?.hasError('required') &&
+        myForm.get('nombre')?.touched
+      "
+      style="margin-top: -20px"
+    >
+      <span class="mda-form-msg"> Este campo es obligatorio </span>
+    </div>
+      <br>
+
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Descripcion</mat-label>
+        <input matInput required placeholder="descripcion" formControlName="descripcion">
+      </mat-form-field>
+      <div
+      *ngIf="
+        myForm.get('descripcion')?.hasError('required') &&
+        myForm.get('descripcion')?.touched
+      "
+      style="margin-top: -20px"
+    >
+      <span class="mda-form-msg"> Este campo es obligatorio </span>
+    </div>
+      <br>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Precio</mat-label>
+        <input type="number" matInput required placeholder="precio" formControlName="precio">
+      </mat-form-field>
+      <div
+      *ngIf="
+        myForm.get('precio')?.hasError('required') &&
+        myForm.get('precio')?.touched
+      "
+      style="margin-top: -20px"
+    >
+      <span class="mda-form-msg"> Este campo es obligatorio </span>
+    </div>
+      <br>
+      <button mat-raised-button type="submit" color="primary" [disabled]="myForm.invalid" class="mx-3">Aceptar</button>
+      <button mat-raised-button color="warn" routerLink="/listPlato" class="mx-3">Cancelar</button>
+
+    </form>
+  </div>
+</ng-container>
+</div>
+</body>
+</html>

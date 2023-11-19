@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #banner{
+    height: 100vh;
+    background-size: cover;
+
+    width: 100%;
+      height: 600px;
+    animation: banner 10s infinite linear alternate;
+     background-size: 100% 100%;
+          display: flex;
+         justify-content: center;
+          align-items: center;
+
+     background-size: cover;
+      background-position: center center;
+      height: 100vh;
+    }
+    #ban-comp
+    {
+        height:fit-content;
+      background-size: cover;
+
+
+    animation: banner 10s infinite linear alternate;
+
+
+    }
+    @keyframes banner {
+     0%,25%{
+         background-image: linear-gradient(
+         0deg,
+             rgba(0,0,0,0.5),
+             rgba(0,0,0,0.5)
+      ),url(/assets/img/banner/banner1.jpg);
+
+         }
+          35%,60%{
+            background-image: linear-gradient(
+              0deg,
+              rgba(0,0,0,0.5),
+           rgba(0,0,0,0.5)
+           ),url(/assets/img/banner/banner2.jpg);
+        }
+         55%,100%{
+          background-image: linear-gradient(
+            0deg,
+            rgba(0,0,0,0.5),
+          rgba(0,0,0,0.5)
+         ),url(/assets/img/banner/banner3.jpg);
+        }
+     }
+     @keyframes ban-comp {
+     0%,25%{
+         background-image: linear-gradient(
+         0deg,
+             rgba(0,0,0,0.5),
+             rgba(0,0,0,0.5)
+      ),url(./Img/banner/banner1.jpg);
+
+         }
+          35%,60%{
+            background-image: linear-gradient(
+              0deg,
+              rgba(0,0,0,0.5),
+           rgba(0,0,0,0.5)
+           ),url(./Img/banner/banner2.jpg);
+        }
+         55%,100%{
+          background-image: linear-gradient(
+            0deg,
+            rgba(0,0,0,0.5),
+          rgba(0,0,0,0.5)
+         ),url(./Img/banner/banner3.jpg);
+        }
+     }
+</style>
+</head>
+<body>
+  <header >
+    <nav class="navbar-expand-lg navbar navbar-dark " style="background-color: #121212;">
+        <div class="container-fluid">
+          <img src="assets/logo.jpg" alt="Logo" width="50" height="50">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+                <li class="nav-item px-3">
+                  <a class="nav-link active" aria-current="page" href="#">Menu</a>
+                </li>
+                <li class="nav-item px-3">
+                    <a class="nav-link active" aria-current="page" href="#">Platos</a>
+                </li>
+                <li class="nav-item px-3">
+                    <a class="nav-link active" aria-current="page" href="#">Restaurantes</a>
+                </li>
+                <li class="nav-item px-3">
+                    <a class="nav-link active" aria-current="page" href="#">¿Quienes Somos?</a>
+                </li>
+                <li>
+                    <button mat-raised-button color="warn" routerLink="/login">Iniciar sesión</button>
+
+                </li>
+            </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+
+<section class="imagen" id="banner" >
+<section id="BienvenidosPc" class="py-5 text-center container">
+    <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+            <h1 class="fw-light mb-4" style="color: white; font-size: 45px; letter-spacing: 2px;"><strong>Bienvenidos a BitFood</strong></h1>
+            <p class="lead  mb-4" style="color: white;" >“BitFood” es un aplicativo web donde los restaurantes pueden ofrecer sus platos no vendidos del día a precios asequibles, lo que no solo reduce su pérdida económica, sino que también evita que estos alimentos terminen en la basura.
+                Nuestra misión es convertir el excedente de comida en una oportunidad para todos: restaurantes, consumidores y el planeta. Únete a nosotros en nuestro viaje para reducir el desperdicio de alimentos y disfrutar de una experiencia gastronómica más sostenible.
+                Nuestra visión es construir un mundo donde el desperdicio de alimentos sea una reliquia del pasado y donde cada plato delicioso tenga la oportunidad de ser disfrutado. 
+            </p>
+        </div>
+    </div>
+</section>
+</section>
+
+<section id="ban-comp"  >
+<section id="ComponentesPC">
+
+<div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="card">
+            <div class="face front">
+                <img src="assets/img/componentes/puertoazul.png" alt="">
+                <h3>Puerto Azul</h3>
+            </div>
+            <div class="face back">
+                <h3>Puerto Azul</h3>
+                <p>Comida de mar hecha con amor, pescados y mariscos, platos criollos</p>
+                <div class="link">
+                    <a href="#">Details</a>
+                </div>
+            </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+            <div class="face front">
+                <img src="assets/img/componentes/rinconaqp.jpg" alt="">
+                <h3>Rinconcito Arequipeño</h3>
+            </div>
+            <div class="face back">
+                <h3>Rinconcito Arequipeño</h3>
+                <p>Platos típicos preparados con buen gusto, ritmo, sazón y un toque propio de inspiración.</p>
+                <div class="link">
+                    <a href="#">Details</a>
+                </div>
+            </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+            <div class="face front">
+                <img src="assets/img/componentes/chifadelicasa.jpg" alt="">
+                <h3>Chifa Delicasa</h3>
+            </div>
+            <div class="face back">
+                <h3>Chifa Delicasa</h3>
+                <p>¡Degusta del más rico sabor y calidad, de la mano de una exquisita atención, para ti y tus seres queridos! Porque sabemos lo que te gusta, ven con nosotros, a compartir en el Chifa Delicasa.</p>
+                <div class="link">
+                    <a href="#">Details</a>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="card">
+            <div class="face front">
+                <img src="assets/img/componentes/wanka.jpg" alt="">
+                <h3>Huancahuasi</h3>
+            </div>
+            <div class="face back">
+                <h3>Huancahuasi</h3>
+                <p>Restaurante Turistico Huancahuasi Les brinda la experiencia de vivir el calor regional junto a los más exquisitos sabores andinos...</p>
+                <div class="link">
+                    <a href="#">Details</a>
+                </div>
+            </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+            <div class="face front">
+                <img src="assets/img/componentes/villa.png" alt="">
+                <h3>Villa Chicken</h3>
+            </div>
+            <div class="face back">
+                <h3>Villa Chicken</h3>
+                <p>Cadena peruana de Pollos a la Leña y Carnes a la Parrilla</p>
+                <div class="link">
+                    <a href="#">Details</a>
+                </div>
+            </div>
+        </div>
+
+      </div>
+      <div class="col">
+        <div class="card">
+            <div class="face front">
+                <img src="assets/img/componentes/norteño.jpg" alt="">
+                <h3>El Norteño</h3>
+            </div>
+            <div class="face back">
+                <h3>El Norteño</h3>
+                <p>Buena sazón buena música buena atención</p>
+                <div class="link">
+                    <a href="#">Details</a>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</section>
+
+
+<section>
+<div class="album" style="background-color: #121212;">
+<div class="container">
+    <footer class="py-4">
+        <div class="row">
+            <div class="col-6 col-md-4 mb-3">
+                <h5 style="color: white; font-size: 25px;" >Mejores Platos: </h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="" target="_blank" class="nav-link p-0 color">Lomo Saltado</a></li>
+                    <li class="nav-item mb-2"><a href=""  target="_blank" class="nav-link p-0 color">Ceviche Mixto</a></li>
+                    <li class="nav-item mb-2"><a href=""  target="_blank" class="nav-link p-0 color">Pollo a la Leña</a></li>
+                    <li class="nav-item mb-2"><a href=""  target="_blank" class="nav-link p-0 color">Arroz con Mariscos</a></li>
+                    <li class="nav-item mb-2"><a href=""  target="_blank" class="nav-link p-0 color">Pastel de Papa</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-md-4 mb-3">
+                <h5 style="color: white;font-size: 25px;">Contacto: </h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href=""  target="_blank" class="nav-link p-0 color">(01) 987 654 321</a></li>
+                    <li class="nav-item mb-2"><a href=""  target="_blank" class="nav-link p-0 color">Chatea con nosotros</a></li>
+                    <li class="nav-item mb-2"><a href="" class="nav-link p-0 color">Escríbenos</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-md-4 mb-3">
+                <h5 style="color: white;font-size: 25px;">Libro de reclamaciones</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="/html/libro_reclamacion1.html"><i class="fa-sharp fa-solid fa-book-open"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="d-flex flex-column flex-sm-row justify-content-between py-2 my-2 border-top">
+            <p style="color: white;">&copy; 2023 Copyright, BitFood</p>
+            <ul class="list-unstyled d-flex">
+                <li class="ms-3"><a href="#" style="color:white"><i class="fab fa-facebook-square"></i></a></li>
+                <li class="ms-3"><a href="#" style="color:white;"><i class="fab fa-twitter-square"></i></a></li>
+                <li class="ms-3"><a href="#" style="color:white"><i class="fab fa-linkedin"></i></a></li>
+            </ul>
+        </div>
+    </footer>
+  </div>
+</div>
+</section>
+
+</body>
+</html>
+

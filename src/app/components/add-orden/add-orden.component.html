@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color:rgb(233, 222, 222)">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<header >
+  <nav class="navbar-expand-lg navbar navbar-dark " style="background-color: #121212;">
+    <div class="container-fluid">
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+            <li class="nav-item px-3">
+              <li class="nav-item px-3">
+                <a class="nav-link active" aria-current="page"  routerLink="/listCliente" >Clientes</a>
+              </li>
+              <li class="nav-item px-3">
+                  <a class="nav-link active" aria-current="page"  routerLink="/listPlato" >Platos</a>
+              </li>
+              <li class="nav-item px-3">
+                  <a class="nav-link active" aria-current="page"  routerLink="/listRestaurante" >Restaurantes</a>
+              </li>
+              <li class="nav-item px-3">
+                  <a class="nav-link active" aria-current="page"  routerLink="/listOrden" >Ordenes</a>
+              </li>
+          <li>
+            <button mat-raised-button color="warn" routerLink="/login">Cerrar Sesion</button>
+          </li>
+
+        </ul>
+        </div>
+    </div>
+</nav>
+</header>
+
+
+<body style="background-color:rgb(233, 222, 222)">
+
+
+
+<div style="background-color:rgb(233, 222, 222)">
+
+
+  <div class="container-lg" style="margin-top: 50px;">
+    <div style="text-align: center;">
+      <h1>Registar Orden</h1>
+    </div>
+  </div>
+ <ng-container>
+  
+  <div class="container" style="text-align: center;">
+    <form [formGroup]="myForm" (submit)="addOrden()">
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Fecha de hoy</mat-label>
+        <input matInput formControlName="fecha" readonly>
+      </mat-form-field>
+    <br>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Cliente</mat-label>
+      <mat-select formControlName="clienteId" required>
+        <mat-option *ngFor="let cliente of cliente" [value]="cliente.id">
+          {{ cliente.nombre }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <div
+      *ngIf="
+        myForm.get('clienteId')?.hasError('required') &&
+        myForm.get('clienteId')?.touched
+      "
+      style="margin-top: -20px"
+    >
+      <span class="mda-form-msg"> Este campo es obligatorio </span>
+    </div>
+    <br>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Elige el Restaurante</mat-label>
+      <mat-select formControlName="restauranteId" required>
+        <mat-option *ngFor="let restaurante of restaurante" [value]="restaurante.id">
+          {{ restaurante.nombre }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <div
+      *ngIf="
+        myForm.get('restauranteId')?.hasError('required') &&
+        myForm.get('restauranteId')?.touched
+      "
+      style="margin-top: -20px"
+    >
+      <span class="mda-form-msg"> Este campo es obligatorio </span>
+    </div>
+    <br>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Elige el Plato</mat-label>
+      <mat-select formControlName="platoId" required>
+        <mat-option *ngFor="let plato of plato" [value]="plato.id">
+          {{ plato.nombre }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <div
+      *ngIf="
+        myForm.get('platoId')?.hasError('required') &&
+        myForm.get('platoId')?.touched
+      "
+      style="margin-top: -20px"
+    >
+      <span class="mda-form-msg"> Este campo es obligatorio </span>
+    </div>
+    <br>
+
+      <button mat-raised-button type="submit" color="primary" [disabled]="myForm.invalid" class="mx-3">Aceptar</button>
+      <button mat-raised-button color="warn" routerLink="/listOrden" class="mx-3">Cancelar</button>
+
+    </form>
+  </div>
+</ng-container>
+</div>
+</body>
+</html>
