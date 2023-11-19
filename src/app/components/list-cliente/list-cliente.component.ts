@@ -90,4 +90,11 @@ constructor(private clienteService: ClienteService, private snackBar: MatSnackBa
       })
   }
 
+  exportToExcel() {
+    this.clienteService.getCliente().subscribe((clientes) => {
+      this.clienteService.exportToExcel(clientes);
+    });
+
+  }
+
 }

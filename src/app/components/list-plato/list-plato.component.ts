@@ -121,5 +121,12 @@ constructor(private platoService: PlatoService, private snackBar: MatSnackBar,
       })
   }
 
+  exportToExcel() {
+    this.platoService.getPlato().subscribe((clientes) => {
+      this.platoService.exportToExcel(clientes);
+    });
+
+  }
+
 
 }

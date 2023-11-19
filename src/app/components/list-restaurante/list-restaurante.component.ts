@@ -117,5 +117,12 @@ constructor(private restauranteService: RestauranteService, private snackBar: Ma
       })
   }
 
+  exportToExcel() {
+    this.restauranteService.getRestaurante().subscribe((restaurante) => {
+      this.restauranteService.exportToExcel(restaurante);
+    });
+
+  }
+
 }
 

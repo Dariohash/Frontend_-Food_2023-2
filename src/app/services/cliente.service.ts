@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Cliente } from '../models/cliente';
+import * as XLSX from 'xlsx';
 
 const base_url = "https://bitfood-backend.onrender.com/cliente"
 
@@ -32,4 +33,13 @@ export class ClienteService {
     return this.http.delete<Cliente>(endpoint)
 
   }
+
+  exportToExcel(clientes: Cliente[]) {
+    const worksheet: XLSX.WorkSheet = XLSX.utils.json_to_sheet(clientes);
+    const workbook: XLSX.WorkBook = { Sheets: { 'data': worksheet }, SheetNames: ['data'] };
+    const excelBuffer: any = XLSX.write(workbook, { bookType: 'xlsx', type: 'array' });
+    const blob = new Blob([excelBuffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8' });
+    XLSX.writeFile(workbook, 'clientes.xlsx');
+  }
+  
 }
