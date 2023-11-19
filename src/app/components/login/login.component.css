@@ -1,0 +1,20 @@
+.bg-amarillo {
+  background-color: #004ca1;
+}
+.bg-amarillo:hover {
+  background-color: #001f3f; /* Puedes mantener el mismo color o cambiarlo si deseas */
+}
+.logo-login {
+  display: none !important;
+}
+@media (min-width:900px) {
+
+  .logo-login {
+    display: flex !important;
+  }
+
+  .entrar-login {
+    width: 50% !important;
+  }
+
+}

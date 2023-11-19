@@ -9,20 +9,32 @@ import { AddPlatoComponent } from './components/add-plato/add-plato.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+//import { FormsModule } from '@angular/forms';
+import {MatSidenavModule} from '@angular/material/sidenav'; //estamso provando
+import { MatDividerModule } from '@angular/material/divider';  //estamso provando
+import { IndexaComponent } from './components/indexa/indexa.component';
+import { IndexMostrarComponent } from './components/indexa/index-mostrar/index-mostrar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     ListPlatoComponent,
-    AddPlatoComponent
+    AddPlatoComponent,
+    IndexaComponent,
+    IndexMostrarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+   // FormsModule,
+    MatSidenavModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

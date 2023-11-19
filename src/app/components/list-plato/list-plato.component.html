@@ -1,3 +1,19 @@
+<mat-card>
+
+  <h2>Lista de Platos</h2>
+  <button mat-raised-button color = "primary" style="background-color: #246098;" [routerLink]="'/addPlato'">Agregar</button>
+
+  <!--- Creamos el Buscador para que aparesca en el listar  -->
+  <mat-card-header>
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>Buscar Plato por Nombre</mat-label>
+        <input matInput #input (keyup) ="filterPlatoByNombre(input.value)" />
+      </mat-form-field>
+    </div>
+  </mat-card-header>
+
+<!--- Muestra lso reguistro del listar -->
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
   <!--- Note that these columns can be defined in any order.
@@ -27,7 +43,33 @@
     <td mat-cell *matCellDef="let element"> {{element.precio}} </td>
   </ng-container>
 
+    <!-- editar y eliminar  -->
+    <ng-container matColumnDef="acciones">
+      <th mat-header-cell *matHeaderCellDef>Acciones</th>
+      <td mat-cell *matCellDef="let element; let i = index">
+
+        <button mat-icon-button color="primary" routerLink="/editPlato/{{element.id}}">
+          <mat-icon aria-label="Edit">edit</mat-icon>
+        </button>
+
+        <button mat-icon-button color="primary" (click)="showDialog(element.id)">
+          <mat-icon aria-label="Delete">delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
+
+<!-- Paginator -->
+<mat-paginator
+[pageSizeOptions]="[3, 6, 10]"
+showFirstLastButtons
+aria-label="Select page of periodic elements">
+</mat-paginator>
+
+
+
+</mat-card>
 
